@@ -239,10 +239,10 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
 
     - Component props, state 변경
 
-      1. <s>componentWillReceiveProps(nextProps)</s> -> getDerivedStateFromProps
+      1. <s>componentWillReceiveProps</s> -> getDerivedStateFromProps
       1. shouldComponentUpdate(nextProps, nextState): boolean
       1. **render**
-      1. <s>componentWillUpdate(nextProps, nextState)</s> -> getSnapshotBeforeUpdate(prevProps, prevState)
+      1. <s>componentWillUpdate</s> -> getSnapshotBeforeUpdate(prevProps, prevState)
          - null을 리턴하면 변화가 없다고 생각하면 됨
          - infinite scroll 같은 경우에 유용
       1. (DOM에 적용)

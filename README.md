@@ -255,3 +255,51 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
     - Component 에러 캐치([Error Boundaries](https://reactjs.org/docs/error-boundaries.html))
 
       1. componentDidCatch(error, info)
+
+- **CRA(Create React App)**
+
+  - `npm start`
+    - Starting the development server.
+  - `npm run build`
+    - Creating an optimized production build.
+    - `npx surve -s build`
+  - `npm test`
+    - Jest를 통해 test code 실행
+  - `npm run eject`
+
+    - CRA 내에서 해결이 안되는 설정을 추가해야 할 때 사용하며, 돌이킬 수 없음.
+
+  - `ESLint`: package.json 파일 내의 `"eslintConfig"`
+  - `Prettier`: An **_opinionated_** code formatter(주관을 가지고 의도적으로 코드를 수정)
+
+  - **Husky**
+
+    - commit이 되기 전에 코드를 점검 및 수정
+
+    ```bash
+    git init
+    npm i husky -D
+    npx husky install
+    ```
+
+    package.json
+
+    ```json
+    "scripts": {
+      "prepare": "husky install",
+      ...
+    }
+    ```
+
+    commit 전에 `npm test`를 실행하고 오류 나면 commit을 중지
+
+    ```bash
+    npx husky add .husky/pre-commit "npm test"
+    git add .
+    git commit -m "~"
+    ```
+
+  - `lint-staged`
+    - Run linters on git staged files(stage에 올린 파일들을 lint)
+
+- **React Developer Tools**

@@ -88,8 +88,17 @@ npm i react-router-dom
   ```
 
 - **JSX 링크로 라우팅 이동하기**
+
   - a 태그를 사용하면 SPA에 어긋나게 됨
   - `react-router-dom`이 `Link` 컴포넌트를 지원
     ```jsx
     <Link to="/">Home</Link>
     ```
+  - `react-router-dom`이 `NavLink` 컴포넌트를 지원
+    - activeClassName, activeStyle처럼 active 상태에 대한 스타일 지정이 가능
+    - Route의 path처럼 동작하기 때문에 exact가 있음
+
+- **js로 라우팅 이동하기**
+  - 하위 컴포넌트에게 props를 넘겨주는 형식(지양할 것)
+  - react-router-dom은 두 가지의 해결법(hoc, hook)을 제공
+    - `withRouter`: 컴포넌트 함수를 인자로 넣어서 export

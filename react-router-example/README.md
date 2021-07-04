@@ -65,3 +65,25 @@ npm i react-router-dom
       ```
 
 - **Switch와 NotFound**
+
+  - 여러 Route 중 순서대로 먼저 맞는 하나만 보여줌
+  - exact를 뺄 수 있는 로직을 만들 수 있음
+  - 마지막에 어디 path에도 맞지 않으면 보여줄 NotFound 페이지를 만들 수 있음
+
+  ```jsx
+  function App() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route path="/profile/:id" component={Profile} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/about" component={About} />
+          <Route path="/" exact component={Home} /> // exact 빼면 notfound도 들어가게 됨
+          <Route component={NotFound} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+  ```
+
+- **JSX 링크로 라우팅 이동하기**

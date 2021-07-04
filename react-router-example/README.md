@@ -78,7 +78,8 @@ npm i react-router-dom
           <Route path="/profile/:id" component={Profile} />
           <Route path="/profile" component={Profile} />
           <Route path="/about" component={About} />
-          <Route path="/" exact component={Home} /> // exact 빼면 notfound도 들어가게 됨
+          <Route path="/" exact component={Home} /> // exact 빼면 notfound도 들어가게
+          됨
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
@@ -87,3 +88,8 @@ npm i react-router-dom
   ```
 
 - **JSX 링크로 라우팅 이동하기**
+  - a 태그를 사용하면 SPA에 어긋나게 됨
+  - `react-router-dom`이 `Link` 컴포넌트를 지원
+    ```jsx
+    <Link to="/">Home</Link>
+    ```

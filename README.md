@@ -41,7 +41,10 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
     };
 
     // <Component /> => <p>type이 "React 컴포넌트"</p>
-    ReactDOM.render(React.createElement(Component, null, null), document.querySelector("#root"));
+    ReactDOM.render(
+      React.createElement(Component, null, null),
+      document.querySelector("#root")
+    );
     ```
 
   - React.Fragment
@@ -119,7 +122,10 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
   }
   */
 
-  ReactDOM.render(<Component message="안녕" />, document.querySelector("#root"));
+  ReactDOM.render(
+    <Component message="안녕" />,
+    document.querySelector("#root")
+  );
   ```
 
 - **_State_**
@@ -297,8 +303,6 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
     - Run linters on git staged files(stage에 올린 파일들을 lint)
 
 - **React Developer Tools**
-
-## React Component Styling
 
 ## Hooks & Context
 

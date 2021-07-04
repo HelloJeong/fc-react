@@ -99,6 +99,9 @@ npm i react-router-dom
     - Route의 path처럼 동작하기 때문에 exact가 있음
 
 - **js로 라우팅 이동하기**
+
   - 하위 컴포넌트에게 props를 넘겨주는 형식(지양할 것)
   - react-router-dom은 두 가지의 해결법(hoc, hook)을 제공
     - `withRouter`: 컴포넌트 함수를 인자로 넣어서 export
+
+- **Redirect**

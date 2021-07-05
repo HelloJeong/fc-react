@@ -78,8 +78,7 @@ npm i react-router-dom
           <Route path="/profile/:id" component={Profile} />
           <Route path="/profile" component={Profile} />
           <Route path="/about" component={About} />
-          <Route path="/" exact component={Home} /> // exact 빼면 notfound도 들어가게
-          됨
+          <Route path="/" exact component={Home} /> // exact 빼면 notfound도 들어가게 됨
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
@@ -91,9 +90,11 @@ npm i react-router-dom
 
   - a 태그를 사용하면 SPA에 어긋나게 됨
   - `react-router-dom`이 `Link` 컴포넌트를 지원
+
     ```jsx
     <Link to="/">Home</Link>
     ```
+
   - `react-router-dom`이 `NavLink` 컴포넌트를 지원
     - activeClassName, activeStyle처럼 active 상태에 대한 스타일 지정이 가능
     - Route의 path처럼 동작하기 때문에 exact가 있음

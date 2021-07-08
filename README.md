@@ -27,10 +27,7 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
 
     ```js
     // <h1>type이 "태그 이름 문자열"</h1>
-    ReactDOM.render(
-      React.createElement("h1", null, `type이 "태그 이름 문자열"`),
-      document.querySelector("#root")
-    );
+    ReactDOM.render(React.createElement("h1", null, `type이 "태그 이름 문자열"`), document.querySelector("#root"));
     ```
 
   - 리액트 컴포넌트 type
@@ -41,10 +38,7 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
     };
 
     // <Component /> => <p>type이 "React 컴포넌트"</p>
-    ReactDOM.render(
-      React.createElement(Component, null, null),
-      document.querySelector("#root")
-    );
+    ReactDOM.render(React.createElement(Component, null, null), document.querySelector("#root"));
     ```
 
   - React.Fragment
@@ -122,10 +116,7 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
   }
   */
 
-  ReactDOM.render(
-    <Component message="안녕" />,
-    document.querySelector("#root")
-  );
+  ReactDOM.render(<Component message="안녕" />, document.querySelector("#root"));
   ```
 
 - **_State_**
@@ -303,6 +294,18 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
     - Run linters on git staged files(stage에 올린 파일들을 lint)
 
 - **React Developer Tools**
+
+## 리액트 실전 활용
+
+- **HOC(Higher-Order Components[참조](https://ko.reactjs.org/docs/higher-order-components.html))**
+  - 컴포넌트를 인자로 받아 새로운 컴포넌트를 리턴하는 함수
+  - HOC 종류 : withRouter, connect(redux)
+  - 주의점
+    - Don't Use HOCs Inside the render Method
+    - Static Methods Must Be Copied Over
+    - Refs Aren't Passed Through(feat. React.forwardRef)
+  - hoist-non-react-statics([참조](https://github.com/mridgway/hoist-non-react-statics))
+- **Controlled Component 와 Uncontrolled Component**
 
 ## Hooks & Context
 

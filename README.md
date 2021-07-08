@@ -297,7 +297,7 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
 
 ## 리액트 실전 활용
 
-- **HOC(Higher-Order Components[참조](https://ko.reactjs.org/docs/higher-order-components.html))**
+- **HOC(Higher-Order Components([참조](https://ko.reactjs.org/docs/higher-order-components.html))**
   - 컴포넌트를 인자로 받아 새로운 컴포넌트를 리턴하는 함수
   - HOC 종류 : withRouter, connect(redux)
   - 주의점

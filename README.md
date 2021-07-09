@@ -307,8 +307,6 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
   - hoist-non-react-statics([참조](https://github.com/mridgway/hoist-non-react-statics))
 - **Controlled Component 와 Uncontrolled Component([이동](https://github.com/HelloJeong/fc-react/tree/main/controlled-uncontrolled-example))**
 
-## Hooks & Context
-
 ## React Testing
 
 ## React Advanced

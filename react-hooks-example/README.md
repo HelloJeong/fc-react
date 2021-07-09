@@ -24,3 +24,22 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
     - [참조](https://rinae.dev/posts/a-complete-guide-to-useeffect-ko)
 
 - **Custom Hooks**
+
+  - useSomething
+
+  - custom hooks vs HOC
+    - useHasMounted vs withHasMounted
+
+- **Additional Hooks**
+
+  - useReducer
+    - 다수의 하윗값을 포함하는 복잡한 정적 로직을 만드는 경우
+    - 다음 state가 이전 state에 의존적인 경우
+    - Redux를 알면 쉽게 사용 가능
+  - render 사이에 어떤 상태를 유지하는 기능
+    - useMemo
+    - useCallback
+    - useRef
+
+- **React Router Hooks([참조](https://reactrouter.com/web/api/Hooks))**
+  - [코드](https://github.com/HelloJeong/fc-react/tree/main/react-router-example)

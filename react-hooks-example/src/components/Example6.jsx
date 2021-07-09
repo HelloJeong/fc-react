@@ -6,6 +6,8 @@ function Example6() {
   const input2Ref = useRef();
 
   console.log(input1Ref.current, input2Ref.current);
+  // createRef는 렌더 될 때마다 새로 레퍼런스를 생성
+  // useRef는 계속 유지
   return (
     <div>
       <input type="text" value={value} onChange={change} />

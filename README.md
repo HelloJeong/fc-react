@@ -307,14 +307,38 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
   - hoist-non-react-statics([참조](https://github.com/mridgway/hoist-non-react-statics))
 - **Controlled Component 와 Uncontrolled Component([이동](https://github.com/HelloJeong/fc-react/tree/main/controlled-uncontrolled-example))**
 
-## React Advanced
-
-- Optimizing Performance(필요할 때만 렌더한다.)
-  - Reconciliation
-    - 렌더 전후의 일치 여부를 판단하는 규칙
-    - 서로 다른 타입의 두 엘리먼트는 서로 다른 트리를 만들어낸다.
-    - 개발자가 key prop을 통해, 여러 렌더링 사이에서 어떤 자식 엘리먼트가 변경되지 않아야 할 지 표시해 줄 수 있다.
-- React.createPortal
-- React.forwardRef
-
 ## Deploy React App
+
+- SPA 프로젝트 배포 이해하기
+
+```bash
+npm run build
+```
+
+- SPA Deploy 특징
+
+  - 모든 요청을 서버에 하고 받아오는 형태가 아님
+  - 라우팅 경로에 상관없이 리액트 앱을 받아 실행
+  - 라우팅은 받아온 리액트 앱을 실행 후 적용
+  - static 파일을 제외한 모든 요청을 index.html로 응답해 주도록 작업해야함
+
+- serve 패키지로 React Wep App 배포하기
+
+```bash
+npm install serve -g
+serve -s build
+```
+
+    - -s 옵션은 없는 라우팅으로 요청해도 index.html을 응답하도록 함(spa의 약자)
+
+- 서버사이드 렌더링 이해하기
+
+  1. 서버에서 응답을 가져올 때, 기존처럼 static file만을 가져오는 것이 아니고, 먼저 서버에서 응답 값을 만들어서 내려주고, 그 후에 static file을 내려준다.
+  1. static file을 다 내려받고, 리액트 앱을 브라우저에서 실행한 뒤에는 SPA처럼 동작하게 된다.
+
+- React Server Side Rendering
+  - React Component를 브라우저가 아니라 Node.js에서 사용
+  - `ReactDOMServer.renderToString(\<App />)`([참조](https://ko.reactjs.org/docs/react-dom-server.html))
+    - 리턴 값은 문자열이고 리턴 값을 응답으로 내려줌
+  - 라우팅, 리덕스와 같은 처리를 서버에서 진행하고 내려줌(복잡하고 어려움)
+  - JSX가 포함된 리액트 코드를 서버에서 읽을 수 있도록 babel 설정을 해야함

@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useCallback, useState } from "react";
+import Modal from "./components/Modal";
 
 class Foo extends React.Component {
   componentDidMount() {
@@ -127,32 +128,54 @@ const Person = React.memo(({ name, age }) => {
 //   toPersonClick = () => {};
 // }
 
-function App() {
-  const [state, setState] = useState({
-    text: "",
-    persons: [
-      { id: 1, name: "jeong", age: 30 },
-      { id: 2, name: "kim", age: 20 },
-    ],
-  });
-  const { text, persons } = state;
-  const toPersonClick = useCallback(() => {}, []);
+// function App() {
+//   const [state, setState] = useState({
+//     text: "",
+//     persons: [
+//       { id: 1, name: "jeong", age: 30 },
+//       { id: 2, name: "kim", age: 20 },
+//     ],
+//   });
+//   const { text, persons } = state;
+//   const toPersonClick = useCallback(() => {}, []);
 
+//   return (
+//     <div>
+//       <input type="text" value={text} onChange={change} />
+//       <ul>
+//         {persons.map((person) => {
+//           // return <Person {...person} key={person.id} />;
+//           // return <Person {...person} key={person.id} onClick={() => {}} />; // input에 입력할 때마다 렌더
+//           return <Person {...person} key={person.id} onClick={toPersonClick} />;
+//         })}
+//       </ul>
+//     </div>
+//   );
+//   function change(e) {
+//     setState({ ...state, text: e.target.value });
+//   }
+// }
+
+function App() {
+  const [visible, setVisible] = useState(false);
+  const open = () => {
+    setVisible(true);
+  };
+  const close = () => {
+    setVisible(false);
+  };
   return (
     <div>
-      <input type="text" value={text} onChange={change} />
-      <ul>
-        {persons.map((person) => {
-          // return <Person {...person} key={person.id} />;
-          // return <Person {...person} key={person.id} onClick={() => {}} />; // input에 입력할 때마다 렌더
-          return <Person {...person} key={person.id} onClick={toPersonClick} />;
-        })}
-      </ul>
+      <button onClick={open}>open</button>
+      {visible && (
+        <Modal>
+          <div style={{ width: "100vw", height: "100vh", background: "rgba(0, 0, 0, 0.5)" }} onClick={close}>
+            Hello
+          </div>
+        </Modal>
+      )}
     </div>
   );
-  function change(e) {
-    setState({ ...state, text: e.target.value });
-  }
 }
 
 export default App;

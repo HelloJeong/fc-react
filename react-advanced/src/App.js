@@ -3,17 +3,17 @@ import React from "react";
 
 class Foo extends React.Component {
   componentDidMount() {
-    console.log("Foo didMount");
+    console.log("Foo didMount", this.props.children);
   }
   componentWillUnmount() {
-    console.log("Foo UnMount");
+    console.log("Foo UnMount", this.props.children);
   }
   static getDerivedStateFromProps(nextProps, prevProps) {
     console.log("Foo getDerivedStateFromProps", nextProps, prevProps);
     return {};
   }
   render() {
-    console.log("Foo render");
+    console.log("Foo render", this.props.children);
     return <p>Foo</p>;
   }
 }
@@ -43,14 +43,30 @@ class App extends React.Component {
     //     </span>
     //   );
     // }
+    // if (this.state.count % 2 === 0) {
+    //   // return <div className="before" title="stuff" />;
+    //   // return <div style={{ color: "red", fontWeight: "bold" }} />;
+    //   return <Foo name="Jeong" />; // 컴포넌트가 mount->unmount가 되는게 아니고 update됨
+    // } else {
+    //   // return <div className="after" title="stuff" />;
+    //   // return <div style={{ color: "green", fontWeight: "bold" }} />;
+    //   return <Foo name="Kim" />;
+    // }
     if (this.state.count % 2 === 0) {
-      // return <div className="before" title="stuff" />;
-      // return <div style={{ color: "red", fontWeight: "bold" }} />;
-      return <Foo name="Jeong" />;
+      return (
+        <ul>
+          <Foo key="2">second</Foo>
+          <Foo key="3">third</Foo>
+        </ul>
+      );
     } else {
-      // return <div className="after" title="stuff" />;
-      // return <div style={{ color: "green", fontWeight: "bold" }} />;
-      return <Foo name="Kim" />;
+      return (
+        <ul>
+          <Foo key="1">first</Foo>
+          <Foo key="2">second</Foo>
+          <Foo key="3">third</Foo>
+        </ul>
+      );
     }
   }
 }

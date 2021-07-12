@@ -1,6 +1,7 @@
 import "./App.css";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import Modal from "./components/Modal";
+import MyInput from "./components/MyInput";
 
 class Foo extends React.Component {
   componentDidMount() {
@@ -156,24 +157,37 @@ const Person = React.memo(({ name, age }) => {
 //   }
 // }
 
+// function App() {
+//   const [visible, setVisible] = useState(false);
+//   const open = () => {
+//     setVisible(true);
+//   };
+//   const close = () => {
+//     setVisible(false);
+//   };
+//   return (
+//     <div>
+//       <button onClick={open}>open</button>
+//       {visible && (
+//         <Modal>
+//           <div style={{ width: "100vw", height: "100vh", background: "rgba(0, 0, 0, 0.5)" }} onClick={close}>
+//             Hello
+//           </div>
+//         </Modal>
+//       )}
+//     </div>
+//   );
+// }
+
 function App() {
-  const [visible, setVisible] = useState(false);
-  const open = () => {
-    setVisible(true);
-  };
-  const close = () => {
-    setVisible(false);
+  const myInputRef = useRef();
+  const click = () => {
+    console.log(myInputRef.current.value);
   };
   return (
     <div>
-      <button onClick={open}>open</button>
-      {visible && (
-        <Modal>
-          <div style={{ width: "100vw", height: "100vh", background: "rgba(0, 0, 0, 0.5)" }} onClick={close}>
-            Hello
-          </div>
-        </Modal>
-      )}
+      <MyInput ref={myInputRef} />
+      <button onClick={click}>send</button>
     </div>
   );
 }

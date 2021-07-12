@@ -16,4 +16,5 @@ _Fastcampus React 강의 내용을 정리해둔 자료입니다._
 
 - React.createPortal([참조](https://ko.reactjs.org/docs/portals.html))
 
-- React.forwardRef
+- React.forwardRef([참조](https://ko.reactjs.org/docs/forwarding-refs.html))
+  - 하위 컴포넌트 ref를 상위 컴포넌트에서 사용
